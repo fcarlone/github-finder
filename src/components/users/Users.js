@@ -1,40 +1,27 @@
 /* eslint-disable no-unused-expressions */
 import React from "react";
 import UserItem from "./UserItem";
+import Spinner from "../layout/Spinner";
+import PropTypes from "prop-types";
 
-class Users extends React.Component {
-  state = {
-    users: [
-      {
-        login: "fcarlone",
-        id: 1,
-        avatar_url: "https://avatars3.githubusercontent.com/u/16404148?v=4",
-        html_url: "https://github.com/fcarlone"
-      },
-      {
-        login: "fcarlone",
-        id: 2,
-        avatar_url: "https://avatars3.githubusercontent.com/u/16404148?v=4",
-        html_url: "https://github.com/fcarlone"
-      },
-      {
-        login: "fcarlone",
-        id: 3,
-        avatar_url: "https://avatars3.githubusercontent.com/u/16404148?v=4",
-        html_url: "https://github.com/fcarlone"
-      }
-    ]
-  };
-  render() {
+const Users = ({ users, loading }) => {
+  if (loading) {
+    return <Spinner />;
+  } else {
     return (
       <div style={userStyle}>
-        {this.props.users.map(user => (
+        {users.map(user => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>
     );
   }
-}
+};
+
+Users.prototypes = {
+  users: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired
+};
 
 const userStyle = {
   display: "grid",
