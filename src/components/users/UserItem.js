@@ -1,29 +1,32 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
+import PropTypes from "prop-types";
 
-class UserItem extends React.Component {
-  render() {
-    // Destructure State
-    const { login, avatar_url, html_url } = this.props.user;
+const UserItem = ({ user: { login, avatar_url, html_url } }) => {
+  // Destructure State
+  // const { login, avatar_url, html_url } = props.user;
 
-    return (
-      <div className="card text-center">
-        <img
-          src={avatar_url}
-          alt="avatar image"
-          className="round-img"
-          style={{ width: "60px" }}
-        />
-        <h3>{login}</h3>
-        <div>
-          <a href={html_url} className="btn btn-dark sm my-1">
-            More
-          </a>
-        </div>
+  return (
+    <div className="card text-center">
+      <img
+        src={avatar_url}
+        alt="avatar image"
+        className="round-img"
+        style={{ width: "60px" }}
+      />
+      <h3>{login}</h3>
+      <div>
+        <a href={html_url} className="btn btn-dark sm my-1">
+          More
+        </a>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+UserItem.propTypes = {
+  user: PropTypes.object.isRequired
+};
 
 export default UserItem;
