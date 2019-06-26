@@ -6,8 +6,7 @@ import GithubContext from "../../context/github/githubContext";
 
 const Users = () => {
   const githubContext = useContext(GithubContext);
-
-  // Destructure githubContext
+  // Destructuring githubContext
   const { loading, users } = githubContext;
 
   if (loading) {
