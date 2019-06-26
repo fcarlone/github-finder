@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React, { useContext } from "react";
 import UserItem from "./UserItem";
 import Spinner from "../layout/Spinner";

@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";

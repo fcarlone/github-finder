@@ -5,6 +5,7 @@ import AlertContext from "../../context/alert/alertContext";
 const Search = () => {
   // Initialize GithubContext
   const githubContext = useContext(GithubContext);
+  // Initialize AlertContext
   const alertContext = useContext(AlertContext);
 
   // Define the state

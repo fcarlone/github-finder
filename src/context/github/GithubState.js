@@ -32,7 +32,6 @@ const GithubState = props => {
       }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
 
-    console.log("search axios get request", res.data);
     dispatch({
       type: SEARCH_USERS,
       payload: res.data.items
@@ -49,15 +48,13 @@ const GithubState = props => {
       }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
 
-    console.log("search axios get request", res.data);
     dispatch({
       type: GET_USER,
       payload: res.data
     });
   };
 
-  // Get Repos
-  // Get user's repo
+  // Get User's Repo
   const getUserRepos = async username => {
     setLoading();
 
@@ -67,7 +64,6 @@ const GithubState = props => {
       }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
 
-    console.log("search axios get request", res.data);
     dispatch({
       type: GET_REPOS,
       payload: res.data
